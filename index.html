@@ -9,16 +9,49 @@
 <body>
   <div class="app">
     <header class="header">
-      <div class="header__brand">
-        <span class="header__icon" aria-hidden="true">◆</span>
-        <div>
-          <h1>Procurement Intelligence Assistant</h1>
-          <p class="header__subtitle">Compare suppliers and get data-driven recommendations</p>
+      <div class="header__inner">
+        <div class="header__brand">
+          <div class="header__logo" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor" opacity="0.9"/>
+              <rect x="13" y="3" width="8" height="8" rx="2" fill="currentColor" opacity="0.6"/>
+              <rect x="3" y="13" width="8" height="8" rx="2" fill="currentColor" opacity="0.6"/>
+              <rect x="13" y="13" width="8" height="8" rx="2" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Procurement Intelligence Assistant</h1>
+            <p class="header__subtitle">AI-powered supplier evaluation and decision support.</p>
+          </div>
         </div>
       </div>
     </header>
 
     <main class="main">
+      <section class="kpi-section" aria-label="Key performance indicators">
+        <div class="kpi-grid">
+          <article class="kpi-card">
+            <p class="kpi-card__label">Number of Suppliers</p>
+            <p class="kpi-card__value" id="kpi-suppliers">3</p>
+            <p class="kpi-card__meta">Active comparison set</p>
+          </article>
+          <article class="kpi-card">
+            <p class="kpi-card__label">Average Price</p>
+            <p class="kpi-card__value" id="kpi-avg-price">—</p>
+            <p class="kpi-card__meta">Across all suppliers</p>
+          </article>
+          <article class="kpi-card">
+            <p class="kpi-card__label">Fastest Delivery</p>
+            <p class="kpi-card__value" id="kpi-fastest-delivery">—</p>
+            <p class="kpi-card__meta">Shortest lead time</p>
+          </article>
+          <article class="kpi-card">
+            <p class="kpi-card__label">Highest Warranty</p>
+            <p class="kpi-card__value" id="kpi-highest-warranty">—</p>
+            <p class="kpi-card__meta">Maximum coverage period</p>
+          </article>
+        </div>
+      </section>
       <section class="card">
         <h2>Supplier Details</h2>
         <p class="card__hint">Enter information for three suppliers to begin your comparison.</p>
@@ -131,6 +164,35 @@
           <p id="recommendation-reason" class="recommended-reason"></p>
         </div>
 
+        <div id="supplier-intelligence" class="intelligence-box">
+          <h3 class="intelligence-box__title">Supplier Intelligence</h3>
+          <p class="intelligence-box__subtitle">Insights for the recommended supplier</p>
+
+          <div class="intelligence-metrics">
+            <div class="intelligence-metric">
+              <span class="intelligence-metric__label">Financial Risk</span>
+              <span class="intelligence-metric__value" id="intel-financial-risk"></span>
+            </div>
+            <div class="intelligence-metric">
+              <span class="intelligence-metric__label">Delivery Reliability</span>
+              <span class="intelligence-metric__value" id="intel-delivery-reliability"></span>
+            </div>
+            <div class="intelligence-metric">
+              <span class="intelligence-metric__label">Negotiation Opportunity</span>
+              <span class="intelligence-metric__value" id="intel-negotiation-opportunity"></span>
+            </div>
+            <div class="intelligence-metric">
+              <span class="intelligence-metric__label">Recommended Payment Terms</span>
+              <span class="intelligence-metric__value intelligence-metric__value--terms" id="intel-payment-terms"></span>
+            </div>
+          </div>
+
+          <div class="intelligence-negotiation">
+            <h4>Suggested Negotiation Points</h4>
+            <ul id="intel-negotiation-points" class="intelligence-list"></ul>
+          </div>
+        </div>
+
         <div class="executive-box">
           <h3>Executive Summary</h3>
           <p id="executive-summary"></p>
@@ -143,6 +205,6 @@
     </footer>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
